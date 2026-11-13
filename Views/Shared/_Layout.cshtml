@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Marwadi University | Student Course Registration</title>
+    <!-- Bootstrap 5 CSS -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <style>
+        body {
+            background-color: #f8fafc;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .main-container {
+            flex: 1;
+        }
+        .navbar-brand {
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .mu-badge {
+            background: #dc2626;
+            color: white;
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+            margin-right: 8px;
+        }
+        .footer-bar {
+            background: #0f172a;
+            color: #cbd5e1;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Navigation Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" asp-controller="Home" asp-action="Index">
+                    <span class="mu-badge">MU</span>
+                    <i class="bi bi-mortarboard-fill text-warning me-2"></i>
+                    <span>Student Registration System</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="Index">
+                                <i class="bi bi-house-door me-1"></i> Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Student" asp-action="Create">
+                                <i class="bi bi-person-plus-fill me-1"></i> Register Student
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Student" asp-action="Index">
+                                <i class="bi bi-card-checklist me-1"></i> Student List
+                            </a>
+                        </li>
+                        <li class="nav-item ms-lg-2">
+                            <span class="badge bg-secondary">.NET Tech (01CE1523)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Container -->
+    <div class="container py-4 main-container">
+        <!-- Toast / Flash Notifications -->
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success alert-dismissible fade show shadow-sm" role="alert">
+                <i class="bi bi-check-circle-fill me-2"></i>@TempData["SuccessMessage"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        }
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-danger alert-dismissible fade show shadow-sm" role="alert">
+                <i class="bi bi-exclamation-triangle-fill me-2"></i>@TempData["ErrorMessage"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        }
+
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!-- Official University Activity Footer -->
+    <footer class="footer-bar py-3 border-top mt-auto">
+        <div class="container text-center text-md-between d-md-flex justify-content-between align-items-center">
+            <div>
+                <strong>Marwadi University</strong> &bull; Department of Computer Engineering<br />
+                <span class="text-secondary">.NET Technologies (01CE1523) &bull; Self-Learning Activity: ASP.NET Core MVC</span>
+            </div>
+            <div class="mt-2 mt-md-0">
+                <span class="badge bg-primary me-1">B.Tech CE</span>
+                <span class="badge bg-success">Semester 5</span>
+                <span class="badge bg-info text-dark">ASP.NET Core 8.0</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap & Validation Scripts -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

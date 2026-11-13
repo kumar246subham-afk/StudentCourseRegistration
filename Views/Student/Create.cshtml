@@ -1,0 +1,112 @@
+@model StudentCourseRegistration.Models.Student
+@{
+    ViewData["Title"] = "Student Registration Form";
+    var courses = ViewBag.Courses as List<string> ?? new();
+}
+
+<!-- Page Header -->
+<div class="d-flex align-items-center mb-4">
+    <a asp-action="Index" class="btn btn-outline-secondary me-3">
+        <i class="bi bi-arrow-left"></i> Back to List
+    </a>
+    <div>
+        <h2 class="fw-bold mb-0">
+            <i class="bi bi-person-plus text-primary me-2"></i>Student Course Registration
+        </h2>
+        <small class="text-muted">Section 4: Registration Form with Model Binding & Data Annotations Validation</small>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="card shadow-sm border-primary">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0"><i class="bi bi-ui-checks me-2"></i>Enter Registration Details</h5>
+            </div>
+            <div class="card-body p-4">
+                <form asp-action="Create" method="post">
+                    @Html.AntiForgeryToken()
+
+                    <!-- Validation Summary for general model errors -->
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+                    <!-- 1. Student Name Field -->
+                    <div class="mb-3">
+                        <label asp-for="Name" class="form-label fw-semibold"></label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-person"></i></span>
+                            <input asp-for="Name" class="form-control" placeholder="e.g. Subham Kumar" />
+                        </div>
+                        <span asp-validation-for="Name" class="text-danger small fw-semibold"></span>
+                    </div>
+
+                    <!-- 2. Email Address Field -->
+                    <div class="mb-3">
+                        <label asp-for="Email" class="form-label fw-semibold"></label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                            <input asp-for="Email" class="form-control" placeholder="e.g. student@marwadiuniversity.ac.in" />
+                        </div>
+                        <span asp-validation-for="Email" class="text-danger small fw-semibold"></span>
+                    </div>
+
+                    <div class="row g-3 mb-4">
+                        <!-- 3. Course Field (Dropdown) -->
+                        <div class="col-md-8">
+                            <label asp-for="Course" class="form-label fw-semibold"></label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-journal-code"></i></span>
+                                <select asp-for="Course" class="form-select">
+                                    <option value="">-- Select Registered Course --</option>
+                                    @foreach (var c in courses)
+                                    {
+                                        <option value="@c">@c</option>
+                                    }
+                                </select>
+                            </div>
+                            <span asp-validation-for="Course" class="text-danger small fw-semibold"></span>
+                        </div>
+
+                        <!-- 4. Semester Field ([Range(1, 8)]) -->
+                        <div class="col-md-4">
+                            <label asp-for="Semester" class="form-label fw-semibold"></label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-calendar3"></i></span>
+                                <input asp-for="Semester" class="form-control" type="number" min="1" max="8" placeholder="1 - 8" />
+                            </div>
+                            <span asp-validation-for="Semester" class="text-danger small fw-semibold"></span>
+                        </div>
+                    </div>
+
+                    <!-- Technical Callout Box for Grading -->
+                    <div class="alert alert-light border small text-muted mb-4">
+                        <i class="bi bi-shield-check text-success me-1"></i>
+                        <strong>Validation Rules Active:</strong>
+                        <ul>
+                            <li><code>Name</code>: <code>[Required]</code>, <code>[StringLength(60, MinimumLength = 3)]</code></li>
+                            <li><code>Email</code>: <code>[Required]</code>, <code>[EmailAddress]</code></li>
+                            <li><code>Course</code>: <code>[Required]</code></li>
+                            <li><code>Semester</code>: <code>[Required]</code>, <code>[Range(1, 8)]</code></li>
+                        </ul>
+                        <em>On submission, <code>ModelState.IsValid</code> verifies the model on the server before storing.</em>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="d-flex justify-content-end gap-2">
+                        <a asp-action="Index" class="btn btn-outline-secondary">
+                            <i class="bi bi-x-circle me-1"></i> Cancel
+                        </a>
+                        <button type="submit" class="btn btn-primary px-4 shadow-sm">
+                            <i class="bi bi-check-circle me-1"></i> Submit Registration
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <!-- Client-side jQuery Unobtrusive Validation -->
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

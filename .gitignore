@@ -1,0 +1,16 @@
+## Build & Binary output
+bin/
+obj/
+
+## IDE cache
+.vs/
+.idea/
+*.user
+*.suo
+
+## Sensitive / Local Configurations
+appsettings.Development.json
+
+## OS files
+.DS_Store
+Thumbs.db

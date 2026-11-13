@@ -1,0 +1,119 @@
+﻿@{
+    ViewData["Title"] = "Home - Student Course Registration";
+}
+
+<!-- Hero Banner -->
+<div class="p-5 mb-4 bg-white rounded-3 shadow-sm border">
+    <div class="container-fluid py-2">
+        <div class="d-flex align-items-center mb-2">
+            <span class="badge bg-danger fs-6 me-2">MARWADI UNIVERSITY</span>
+            <span class="badge bg-dark fs-6">01CE1523</span>
+        </div>
+        <h1 class="display-6 fw-bold text-dark">
+            <i class="bi bi-mortarboard-fill text-primary me-2"></i>Student Course Registration System
+        </h1>
+        <p class="col-md-10 fs-5 text-muted">
+            Self-Learning Activity for <strong>B.Tech Computer Engineering &bull; Semester 5 &bull; .NET Technology</strong>.
+            Demonstrating ASP.NET Core MVC architecture, Model Binding, Razor Views, Tag Helpers, and Data Annotation Validation.
+        </p>
+        <div class="d-flex flex-wrap gap-2 pt-2">
+            <a asp-controller="Student" asp-action="Create" class="btn btn-primary btn-lg shadow-sm">
+                <i class="bi bi-person-plus-fill me-1"></i> Register Student Now
+            </a>
+            <a asp-controller="Student" asp-action="Index" class="btn btn-outline-dark btn-lg">
+                <i class="bi bi-card-checklist me-1"></i> View Registered Students
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Application Flow Diagram & Learning Objectives -->
+<div class="row g-4 mb-4">
+    <!-- Flowchart Card matching PDF Section 6 -->
+    <div class="col-lg-7">
+        <div class="card shadow-sm h-100 border-primary">
+            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                <h5 class="mb-0"><i class="bi bi-diagram-3-fill me-2"></i>Application Flow (Section 6)</h5>
+                <span class="badge bg-light text-dark">Expected Flow</span>
+            </div>
+            <div class="card-body">
+                <p class="text-muted small mb-3">
+                    Only valid registrations reach the Student List via <code>ModelState.IsValid</code> verification:
+                </p>
+
+                <!-- Flow Visualizer -->
+                <div class="p-3 bg-light rounded border text-center">
+                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+                        <div class="p-2 bg-white border rounded shadow-sm flex-fill">
+                            <strong class="d-block text-primary"><i class="bi bi-house"></i> Home Page</strong>
+                            <small class="text-muted">Home/Index</small>
+                        </div>
+                        <i class="bi bi-arrow-right fs-4 text-secondary d-none d-md-block"></i>
+                        <i class="bi bi-arrow-down fs-4 text-secondary d-md-none"></i>
+                        <div class="p-2 bg-white border rounded shadow-sm flex-fill">
+                            <strong class="d-block text-warning"><i class="bi bi-ui-checks"></i> Registration Form</strong>
+                            <small class="text-muted">GET Student/Create</small>
+                        </div>
+                        <i class="bi bi-arrow-right fs-4 text-secondary d-none d-md-block"></i>
+                        <i class="bi bi-arrow-down fs-4 text-secondary d-md-none"></i>
+                        <div class="p-2 bg-white border rounded shadow-sm flex-fill">
+                            <strong class="d-block text-danger"><i class="bi bi-shield-check"></i> ModelState.IsValid?</strong>
+                            <small class="text-danger">Invalid: Return Form</small>
+                        </div>
+                    </div>
+
+                    <div class="my-3 text-success fw-bold">
+                        <i class="bi bi-arrow-down-circle-fill fs-4"></i><br />
+                        <span class="badge bg-success">Yes: Valid Data Redirects</span>
+                    </div>
+
+                    <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3">
+                        <div class="p-2 bg-white border border-success rounded shadow-sm" style="min-width: 200px;">
+                            <strong class="d-block text-success"><i class="bi bi-list-task"></i> Student List</strong>
+                            <small class="text-muted">Student/Index</small>
+                        </div>
+                        <i class="bi bi-arrow-right fs-4 text-secondary d-none d-md-block"></i>
+                        <i class="bi bi-arrow-down fs-4 text-secondary d-md-none"></i>
+                        <div class="p-2 bg-white border border-info rounded shadow-sm" style="min-width: 200px;">
+                            <strong class="d-block text-info"><i class="bi bi-person-lines-fill"></i> Student Details</strong>
+                            <small class="text-muted">Student/Details/{id}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Learning Objectives Card matching PDF Section 2 & 3 -->
+    <div class="col-lg-5">
+        <div class="card shadow-sm h-100">
+            <div class="card-header bg-dark text-white">
+                <h5 class="mb-0"><i class="bi bi-check2-circle me-2"></i>Learning Objectives Implemented</h5>
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush small">
+                    <li class="list-group-item d-flex align-items-start">
+                        <i class="bi bi-check-circle-fill text-success me-2 mt-1"></i>
+                        <div><strong>MVC Architecture:</strong> Separation of Model (Data), View (Razor UI), and Controller (Flow logic).</div>
+                    </li>
+                    <li class="list-group-item d-flex align-items-start">
+                        <i class="bi bi-check-circle-fill text-success me-2 mt-1"></i>
+                        <div><strong>Data Annotations:</strong> <code>[Required]</code>, <code>[StringLength]</code>, <code>[Range]</code>, <code>[EmailAddress]</code>.</div>
+                    </li>
+                    <li class="list-group-item d-flex align-items-start">
+                        <i class="bi bi-check-circle-fill text-success me-2 mt-1"></i>
+                        <div><strong>Model Binding:</strong> Automatic mapping of HTML POST data to C# <code>Student</code> model.</div>
+                    </li>
+                    <li class="list-group-item d-flex align-items-start">
+                        <i class="bi bi-check-circle-fill text-success me-2 mt-1"></i>
+                        <div><strong>Tag Helpers:</strong> <code>asp-for</code>, <code>asp-validation-for</code>, <code>asp-action</code>, <code>asp-controller</code>.</div>
+                    </li>
+                    <li class="list-group-item d-flex align-items-start">
+                        <i class="bi bi-check-circle-fill text-success me-2 mt-1"></i>
+                        <div><strong>POST-Redirect-GET Pattern:</strong> Prevents duplicate form submissions on browser refresh.</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

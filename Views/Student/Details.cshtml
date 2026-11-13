@@ -1,0 +1,88 @@
+@model StudentCourseRegistration.Models.Student
+@{
+    ViewData["Title"] = "Student Details";
+}
+
+<!-- Page Header -->
+<div class="d-flex align-items-center mb-4">
+    <a asp-action="Index" class="btn btn-outline-secondary me-3">
+        <i class="bi bi-arrow-left"></i> Back to Student List
+    </a>
+    <div>
+        <h2 class="fw-bold mb-0">
+            <i class="bi bi-person-badge-fill text-info me-2"></i>Student Registration Details
+        </h2>
+        <small class="text-muted">Section 4: Student Details View for ID #@Model.Id</small>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="card shadow-sm border-info">
+            <div class="card-header bg-info text-dark d-flex justify-content-between align-items-center">
+                <h5 class="mb-0 fw-bold">
+                    <i class="bi bi-person-check-fill me-2"></i>@Model.Name
+                </h5>
+                <span class="badge bg-dark">Enrolled &bull; Sem @Model.Semester</span>
+            </div>
+            <div class="card-body p-4">
+                <div class="row g-4">
+                    <div class="col-sm-6">
+                        <label class="text-muted small text-uppercase fw-semibold mb-1">Registration ID</label>
+                        <p class="fs-5 fw-bold text-dark">#@Model.Id</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="text-muted small text-uppercase fw-semibold mb-1">Student Full Name</label>
+                        <p class="fs-5 fw-bold text-primary">@Model.Name</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="text-muted small text-uppercase fw-semibold mb-1">Email Address</label>
+                        <p class="fs-6">
+                            <i class="bi bi-envelope-fill text-secondary me-1"></i>
+                            <a href="mailto:@Model.Email">@Model.Email</a>
+                        </p>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="text-muted small text-uppercase fw-semibold mb-1">Current Semester</label>
+                        <p class="fs-6">
+                            <span class="badge bg-secondary fs-6">Semester @Model.Semester</span>
+                        </p>
+                    </div>
+                    <div class="col-12">
+                        <label class="text-muted small text-uppercase fw-semibold mb-1">Enrolled Course</label>
+                        <div class="p-3 bg-light border rounded">
+                            <h6 class="mb-0 text-dark fw-bold">
+                                <i class="bi bi-book-half text-primary me-2"></i>@Model.Course
+                            </h6>
+                            <small class="text-muted">Marwadi University &bull; Faculty of Engineering</small>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <label class="text-muted small text-uppercase fw-semibold mb-1">Date & Time of Registration</label>
+                        <p class="text-muted mb-0">
+                            <i class="bi bi-clock-history me-1"></i>
+                            @Model.RegistrationDate.ToString("dddd, dd MMMM yyyy 'at' hh:mm:ss tt")
+                        </p>
+                    </div>
+                </div>
+
+                <hr class="my-4" />
+
+                <!-- Action Links -->
+                <div class="d-flex justify-content-between align-items-center">
+                    <a asp-controller="Home" asp-action="Index" class="btn btn-outline-secondary">
+                        <i class="bi bi-house me-1"></i> Home
+                    </a>
+                    <div class="d-flex gap-2">
+                        <a asp-action="Create" class="btn btn-outline-primary">
+                            <i class="bi bi-person-plus me-1"></i> Register Another
+                        </a>
+                        <a asp-action="Index" class="btn btn-primary">
+                            <i class="bi bi-list-check me-1"></i> View All Students
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
