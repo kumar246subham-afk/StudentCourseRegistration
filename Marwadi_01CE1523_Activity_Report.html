@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marwadi University - 01CE1523 Self-Learning Activity Report</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #1e293b;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: #f1f5f9;
+        }
+        .report-page {
+            max-width: 900px;
+            margin: 0 auto 30px auto;
+            background: #ffffff;
+            padding: 40px 50px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            border-radius: 4px;
+        }
+        .header-box {
+            text-align: center;
+            border-bottom: 3px double #0f172a;
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+        .header-box h2 {
+            margin: 0;
+            color: #b91c1c;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        .header-box h4 {
+            margin: 5px 0;
+            color: #334155;
+            font-weight: 600;
+        }
+        .header-box p {
+            margin: 2px 0;
+            font-size: 0.95rem;
+            color: #64748b;
+        }
+        .badge {
+            display: inline-block;
+            background: #0284c7;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+        .meta-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+        }
+        .meta-table td {
+            padding: 8px 12px;
+            border: 1px solid #cbd5e1;
+            font-size: 0.95rem;
+        }
+        .meta-table td.label {
+            font-weight: 700;
+            width: 25%;
+            color: #1e293b;
+            background: #f1f5f9;
+        }
+        h3.section-title {
+            color: #0f172a;
+            border-left: 5px solid #0284c7;
+            padding-left: 10px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+        table.content-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.9rem;
+        }
+        table.content-table th, table.content-table td {
+            border: 1px solid #cbd5e1;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        table.content-table th {
+            background-color: #f1f5f9;
+            color: #0f172a;
+            font-weight: 700;
+        }
+        pre {
+            background: #0f172a;
+            color: #f8fafc;
+            padding: 12px 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-size: 0.85rem;
+            line-height: 1.45;
+        }
+        .flow-diagram {
+            background: #f8fafc;
+            border: 1px dashed #0284c7;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            font-family: monospace;
+            font-size: 0.9rem;
+            margin: 15px 0;
+        }
+        .screen-mockup {
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            padding: 12px;
+            background: #fdfdfd;
+            margin: 15px 0;
+        }
+        .screen-mockup h5 {
+            margin: 0 0 8px 0;
+            color: #0369a1;
+        }
+        .footer-sign {
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+        }
+        .sign-line {
+            width: 200px;
+            border-top: 1px solid #475569;
+            padding-top: 6px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        @media print {
+            body { background: white; padding: 0; }
+            .report-page { box-shadow: none; padding: 20px 30px; max-width: 100%; }
+            .no-print { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="no-print" style="text-align: center; margin-bottom: 20px;">
+        <button onclick="window.print()" style="background: #0284c7; color: white; border: none; padding: 10px 24px; font-size: 1rem; border-radius: 6px; cursor: pointer; font-weight: bold;">
+            🖨️ Print / Save as PDF (for Google Classroom)
+        </button>
+    </div>
+
+    <div class="report-page">
+        <!-- Title Page Header -->
+        <div class="header-box">
+            <h2>MARWADI UNIVERSITY</h2>
+            <h4>DEPARTMENT OF COMPUTER ENGINEERING</h4>
+            <p><strong>B.Tech Computer Engineering &bull; Semester 5</strong></p>
+            <p>.NET Technologies (Course Code: <strong>01CE1523</strong>)</p>
+            <p style="margin-top: 8px;"><span class="badge">Self-Learning Activity Report &ndash; ASP.NET Core MVC</span></p>
+        </div>
+
+        <!-- Academic Metadata Table -->
+        <table class="meta-table">
+            <tr>
+                <td class="label">Student Name</td>
+                <td>Subham Kumar Keshari</td>
+                <td class="label">Academic Subject</td>
+                <td>.NET Technologies (01CE1523)</td>
+            </tr>
+            <tr>
+                <td class="label">Branch & Semester</td>
+                <td>B.Tech Computer Engineering &bull; Sem 5</td>
+                <td class="label">Activity Title</td>
+                <td>Student Course Registration System</td>
+            </tr>
+            <tr>
+                <td class="label">GitHub Repository</td>
+                <td colspan="3"><a href="https://github.com/kumar246subham-afk/StudentCourseRegistration" target="_blank">https://github.com/kumar246subham-afk/StudentCourseRegistration</a></td>
+            </tr>
+        </table>
+
+        <!-- Section 1: Introduction -->
+        <h3 class="section-title">1. Introduction</h3>
+        <p>
+            <strong>ASP.NET Core MVC</strong> is Microsoft's modern, open-source, cross-platform framework for building web applications using the Model-View-Controller (MVC) architectural design pattern. Unlike the legacy .NET Framework, ASP.NET Core is cloud-optimized, modular, and executes cross-platform on Windows, macOS, and Linux.
+        </p>
+        <p>
+            This self-learning activity applies ASP.NET Core MVC fundamentals to build an independent <strong>Student Course Registration System</strong> fulfilling all criteria set by the Department of Computer Engineering.
+        </p>
+
+        <!-- Section 2: Learning Objectives -->
+        <h3 class="section-title">2. Learning Objectives</h3>
+        <ul>
+            <li>Understand the architecture of ASP.NET Core MVC and the request-response lifecycle.</li>
+            <li>Master the project directory structure (<code>Program.cs</code>, <code>Models</code>, <code>Views</code>, <code>Controllers</code>).</li>
+            <li>Differentiate between Model (State & Validation), View (Razor markup), and Controller (Dispatching).</li>
+            <li>Implement Razor Views, Tag Helpers (<code>asp-for</code>, <code>asp-validation-for</code>, <code>asp-action</code>, <code>asp-controller</code>), and layout pages.</li>
+            <li>Implement HTML form handling, model binding, and server-side validation using <strong>Data Annotations</strong>.</li>
+            <li>Enforce application flow via <code>ModelState.IsValid</code> and the POST-Redirect-GET (PRG) pattern.</li>
+        </ul>
+
+        <!-- Section 3: ASP.NET Core MVC Concepts -->
+        <h3 class="section-title">3. ASP.NET Core MVC Concepts & MVC Architecture</h3>
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th style="width: 25%;">MVC Component</th>
+                    <th>Role & Responsibility</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Model</strong></td>
+                    <td>C# class (<code>Student.cs</code>) defining data fields (Id, Name, Email, Course, Semester) and validation rules via Data Annotations.</td>
+                </tr>
+                <tr>
+                    <td><strong>View</strong></td>
+                    <td>Razor files (<code>.cshtml</code>) generating user interface using HTML5, Bootstrap 5, and Razor Tag Helpers.</td>
+                </tr>
+                <tr>
+                    <td><strong>Controller</strong></td>
+                    <td><code>StudentController.cs</code> which processes incoming HTTP requests, binds form data, evaluates <code>ModelState.IsValid</code>, and determines the response.</td>
+                </tr>
+                <tr>
+                    <td><strong>Routing</strong></td>
+                    <td>Configured in <code>Program.cs</code> as <code>{controller=Home}/{action=Index}/{id?}</code>.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Section 4: Expected Application Flow -->
+        <h3 class="section-title">4. Application Flow (Section 6 of Specification)</h3>
+        <div class="flow-diagram">
+            [Home Page (Home/Index)] ──&gt; [Student Registration (GET Student/Create)]<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Submit Form (POST Student/Create)]<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ModelState.IsValid?]<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─── NO ──&gt; Return Form with Validation Errors<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─── YES ─&gt; Save Record &amp; RedirectToAction("Index")<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Student List (Student/Index)]<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[View Details]<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Student Details (Student/Details/id)]
+        </div>
+
+        <!-- Section 5: Implementation & Code Snippets -->
+        <h3 class="section-title">5. Implementation Details & Key Code Snippets</h3>
+
+        <p><strong>A. Model with Data Annotations (<code>Models/Student.cs</code>)</strong></p>
+<pre>
+public class Student
+{
+    public int Id { get; set; }
+
+    [Required(ErrorMessage = "Student Name is required.")]
+    [StringLength(60, MinimumLength = 3, ErrorMessage = "Name must be between 3 and 60 characters.")]
+    [Display(Name = "Student Name")]
+    public string Name { get; set; } = string.Empty;
+
+    [Required(ErrorMessage = "Email Address is required.")]
+    [EmailAddress(ErrorMessage = "Please enter a valid email address.")]
+    [StringLength(100)]
+    public string Email { get; set; } = string.Empty;
+
+    [Required(ErrorMessage = "Course selection is required.")]
+    public string Course { get; set; } = string.Empty;
+
+    [Required(ErrorMessage = "Semester is required.")]
+    [Range(1, 8, ErrorMessage = "Semester must be between 1 and 8.")]
+    public int Semester { get; set; }
+
+    public DateTime RegistrationDate { get; set; } = DateTime.Now;
+}
+</pre>
+
+        <p><strong>B. Controller Action with Validation Enforcement (<code>Controllers/StudentController.cs</code>)</strong></p>
+<pre>
+[HttpPost]
+[ValidateAntiForgeryToken]
+public IActionResult Create(Student student)
+{
+    // Check validation rules
+    if (!ModelState.IsValid)
+    {
+        ViewBag.Courses = AvailableCourses;
+        return View(student); // Re-render form with error spans
+    }
+
+    // Persist valid registration to thread-safe list
+    lock (_students)
+    {
+        student.Id = _students.Count > 0 ? _students.Max(s => s.Id) + 1 : 1;
+        student.RegistrationDate = DateTime.Now;
+        _students.Add(student);
+    }
+
+    TempData["SuccessMessage"] = $"Registration successful! {student.Name} has been enrolled.";
+    return RedirectToAction(nameof(Index)); // POST-Redirect-GET pattern
+}
+</pre>
+
+        <p><strong>C. Razor Tag Helpers in Form (<code>Views/Student/Create.cshtml</code>)</strong></p>
+<pre>
+&lt;form asp-action="Create" method="post"&gt;
+    &lt;div class="mb-3"&gt;
+        &lt;label asp-for="Name" class="form-label fw-semibold"&gt;&lt;/label&gt;
+        &lt;input asp-for="Name" class="form-control" /&gt;
+        &lt;span asp-validation-for="Name" class="text-danger small"&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    ...
+&lt;/form&gt;
+</pre>
+
+        <!-- Section 6: Screenshots Description -->
+        <h3 class="section-title">6. Working Application Screen Verification</h3>
+        
+        <div class="screen-mockup">
+            <h5>Screen 1: Home Page (<code>/</code>)</h5>
+            <p>Presents Marwadi University banner, course code 01CE1523, Department of Computer Engineering credentials, the Section 6 visual flow diagram, and direct action buttons.</p>
+        </div>
+
+        <div class="screen-mockup">
+            <h5>Screen 2: Registration Form & Validation Errors (<code>/Student/Create</code>)</h5>
+            <p>When user leaves fields empty or enters invalid data (e.g. invalid email format or semester > 8), inline Bootstrap validation error alerts activate immediately:
+            <br />&bull; <em>"Student Name is required."</em>
+            <br />&bull; <em>"Please enter a valid email address."</em>
+            <br />&bull; <em>"Semester must be between 1 and 8."</em></p>
+        </div>
+
+        <div class="screen-mockup">
+            <h5>Screen 3: Student List (<code>/Student/Index</code>)</h5>
+            <p>Only validated registrations reach this list. Displays ID, Student Name, Email, Course Badge, Semester, Registration Timestamp, and 'Details' button.</p>
+        </div>
+
+        <div class="screen-mockup">
+            <h5>Screen 4: Student Details (<code>/Student/Details/{id}</code>)</h5>
+            <p>Comprehensive profile view displaying full student enrollment details and navigation links.</p>
+        </div>
+
+        <!-- Section 7: Challenges & Solutions -->
+        <h3 class="section-title">7. Challenges Faced and Solutions</h3>
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>Challenge</th>
+                    <th>Technical Solution</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Duplicate Submissions on Page Refresh</strong></td>
+                    <td>Implemented the <strong>POST-Redirect-GET (PRG)</strong> pattern via <code>RedirectToAction(nameof(Index))</code>.</td>
+                </tr>
+                <tr>
+                    <td><strong>Form State Reset on Invalid Postback</strong></td>
+                    <td>Repopulated <code>ViewBag.Courses</code> inside the invalid block before returning <code>View(student)</code>.</td>
+                </tr>
+                <tr>
+                    <td><strong>Data Concurrency in Memory</strong></td>
+                    <td>Implemented a <code>lock (_students)</code> block during ID generation and list insertion to guarantee thread safety.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Section 8: Conclusion & References -->
+        <h3 class="section-title">8. Conclusion & Learning Resources</h3>
+        <p>
+            The project successfully met all objectives specified in the syllabus. It demonstrated clean separation of concerns, strong model validation using Data Annotations, intuitive user experience using Tag Helpers, and correct HTTP routing.
+        </p>
+
+        <p><strong>References Used:</strong></p>
+        <ol>
+            <li>Microsoft Learn: <a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/overview">Overview of ASP.NET Core MVC</a></li>
+            <li>Microsoft Learn: <a href="https://learn.microsoft.com/en-us/aspnet/core/mvc/models/validation">Model validation in ASP.NET Core MVC</a></li>
+            <li>freeCodeCamp: <em>Learn ASP.NET Core MVC with .NET 9</em></li>
+            <li>kudvenkat: <em>ASP.NET Core Tutorial for Beginners (YouTube Playlist)</em></li>
+            <li>Marwadi University: <em>Department of Computer Engineering .NET Technologies (01CE1523) Curriculum Material</em></li>
+        </ol>
+
+        <!-- Signatures Block -->
+        <div class="footer-sign">
+            <div class="sign-line">Student Signature<br><small>Subham Kumar Keshari</small></div>
+            <div class="sign-line">Faculty Evaluator<br><small>Dept of Computer Engineering</small></div>
+            <div class="sign-line">Date of Submission<br><small>November 2026</small></div>
+        </div>
+    </div>
+</body>
+</html>
