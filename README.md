@@ -6,6 +6,19 @@
 [![C#](https://img.shields.io/badge/C%23-12.0-purple?style=for-the-badge&logo=csharp)](https://docs.microsoft.com/en-us/dotnet/csharp/)
 [![Marwadi University](https://img.shields.io/badge/Marwadi_University-NAAC_A%2B-red?style=for-the-badge)](https://www.marwadiuniversity.ac.in/)
 [![Status](https://img.shields.io/badge/Build-Passing_(0_Errors)-success?style=for-the-badge)](https://github.com/kumar246subham-afk/StudentCourseRegistration)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/kumar246subham-afk/StudentCourseRegistration)
+
+---
+
+## ⚡ 1-Click Run & Live Preview Links
+
+| Action | Direct Link / Button | Description |
+| :--- | :--- | :--- |
+| ☁️ **Run Live in Browser (Cloud)** | [![Open in GitHub Codespaces](https://img.shields.io/badge/Launch-GitHub_Codespaces-blue?style=for-the-badge&logo=github)](https://codespaces.new/kumar246subham-afk/StudentCourseRegistration) | 1-Click cloud container runs the .NET project live in your browser without installing anything! |
+| 🚀 **1-Click Local Run Script** | [`START_PROJECT.bat`](START_PROJECT.bat) | Double-click this script on your computer to automatically launch the project at `http://localhost:5188`. |
+| 📄 **Official Submission Report (PDF)** | [`Marwadi_01CE1523_Activity_Report.pdf`](Marwadi_01CE1523_Activity_Report.pdf) | Complete academic report with all 14 required sections, screenshots, and references. |
+| 🌐 **Interactive Web Report (HTML)** | [`Marwadi_01CE1523_Activity_Report.html`](Marwadi_01CE1523_Activity_Report.html) | High-resolution styled HTML report viewable in any browser. |
+| 📦 **Download Source Code (ZIP)** | [`StudentCourseRegistration_SourceCode.zip`](StudentCourseRegistration_SourceCode.zip) | Clean source code bundle without `bin` and `obj` folders for Google Classroom submission. |
 
 ---
 
